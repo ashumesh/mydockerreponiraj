@@ -36,7 +36,7 @@ pipeline {
         
         stage ("Stop previos container"){
             steps {
-                sh 'docker ps -f name=mypythonContainer -q | xargs --no-run-if-empty docker conatainer stop'
+                sh 'docker ps -f name=mypythonContainer -q | xargs --no-run-if-empty docker container stop'
                 sh 'docker container ls -a -fname=mypythonContainer -q | xargs -r docker container rm'
             }
         }
