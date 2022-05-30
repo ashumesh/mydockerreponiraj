@@ -1,3 +1,4 @@
+Jenkins Pipeline to create docker image and upload to ecr and create docker container from ECR
 # mydockerrepo
 
 1. Install Docker on jenkins server -> sudo apt install docker.io -y
