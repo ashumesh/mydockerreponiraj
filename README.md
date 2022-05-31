@@ -6,3 +6,4 @@ Jenkins Pipeline to create docker image and upload to ecr and create docker cont
 3. install aws cli -> sudo apt install awscli
 4. install docker and docker pipeline plugin in jenkins
 5. install ssh pipeline plugin and gradle
+6. create amazonec2containerregistryfullaccess role and attach to jenkins-ec2 server
