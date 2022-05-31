@@ -7,3 +7,4 @@ Jenkins Pipeline to create docker image and upload to ecr and create docker cont
 4. install docker and docker pipeline plugin in jenkins
 5. install ssh pipeline plugin and gradle
 6. create amazonec2containerregistryfullaccess role and attach to jenkins-ec2 server
+7. installed Kubernetes Continuous Deploy plugin for k8s
