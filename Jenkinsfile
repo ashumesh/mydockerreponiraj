@@ -12,7 +12,6 @@ pipeline {
         stage ("Docker build") {
             steps {
                 script {
-                    #dockerImage = docker.build registry
                     sh 'docker build -t ashwinimesh12345/ashwinirepo .'
                 }
             }
