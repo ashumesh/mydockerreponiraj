@@ -2,10 +2,6 @@ pipeline {
     
     agent any
     
-    #environment {
-     #   registry = "817141239014.dkr.ecr.us-east-1.amazonaws.com/test-ecr"
-    #}
-    
     stages {
         stage ("checkout") {
             steps {
