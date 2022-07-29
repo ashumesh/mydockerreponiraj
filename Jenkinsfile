@@ -2,14 +2,14 @@ pipeline {
     
     agent any
     
-    environment {
-        registry = "817141239014.dkr.ecr.us-east-1.amazonaws.com/test-ecr"
-    }
+    #environment {
+     #   registry = "817141239014.dkr.ecr.us-east-1.amazonaws.com/test-ecr"
+    #}
     
     stages {
         stage ("checkout") {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/nirajvishwakarma/mydockerrepo.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/ashumesh/mydockerreponiraj.git']]])
             }
         }
         
@@ -24,8 +24,8 @@ pipeline {
         stage ("Docker upload") {
             steps {
                 script {
-                    sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 817141239014.dkr.ecr.us-east-1.amazonaws.com'
-                    sh 'docker push 817141239014.dkr.ecr.us-east-1.amazonaws.com/test-ecr:latest'
+                    
+                    sh 'docker push ashwinimesh12345/ashwinirepo'
                 }
             }
             
@@ -44,7 +44,7 @@ pipeline {
         stage ("Docker run") {
             steps {
                 script {
-                    sh 'docker run -d -p 8096:5000  --rm --name mypythonContainer 817141239014.dkr.ecr.us-east-1.amazonaws.com/test-ecr:latest'
+                    sh 'docker run -d -p 8096:5000  --rm --name mypythonContainer ashwinimesh12345/ashwinirepo'
                 }
             }
         }
