@@ -12,12 +12,13 @@ pipeline {
         stage ("Docker build") {
             steps {
                 script {
-                    dockerImage = docker.build registry
+                    #dockerImage = docker.build registry
+                    sh 'docker build -t ashwinimesh12345/ashwinirepo .'
                 }
             }
         }
         
-        stage ("Docker upload") {
+        stage ("Docker upload") { 
             steps {
                 script {
                     
